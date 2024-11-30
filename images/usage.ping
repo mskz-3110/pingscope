@@ -1,0 +1,7 @@
+#{"Dst": "www.google.com", "Count": 5}
+12
+11
+11
+12
+11
+#{"Avg": 12, "Min": 11, "Max": 12, "ElapsedTime": 5.056681200047024}
