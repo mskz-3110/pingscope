@@ -7,7 +7,7 @@ def write_image_sample_time(pingCount, maxCount):
     roundTripTimes.append(i % 30 + 10)
   pingscope = ps.Pingscope(maxCount)
   pingscope.RoundTripTimes = roundTripTimes
-  pingscope.to_figure_helper().write_image("""./images/sample_time_{}s.png""".format(pingCount))
+  pingscope.to_figure_helper().write_image("""./images/sample_time_{}sec.png""".format(pingCount))
 
 def test_pingscope():
   pingscope = ps.Pingscope()

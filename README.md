@@ -13,7 +13,7 @@ Measuring and graphing ping
 
 ## Usage
 ### pingscope
-![](https://github.com/mskz-3110/pingscope/blob/main/images/usage.png)
+![](./images/usage.png)
 ```python
 def test_pingscope_usage():
   dst = os.getenv("PINGSCOPE_DST")
