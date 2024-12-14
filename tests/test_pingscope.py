@@ -29,7 +29,6 @@ def test_pingscope():
   write_image_sample_time(60, 60)
   write_image_sample_time(3600, 30)
 
-def test_pingscope_usage():
   dst = os.getenv("PINGSCOPE_DST")
   if dst is not None:
     pingFilePath = "./images/usage.ping"
