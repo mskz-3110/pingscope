@@ -41,8 +41,8 @@ x.x.x.x の ping 統計:
 ```
 
 ## What is possible
-### 1. Returns the ping execution result as an integer value in milliseconds
-### 2. Output ping results as images
+1. Returns the ping execution result as an integer value in milliseconds
+2. Output ping results as images
 
 ## Reason for development
 - I would like to obtain the round trip time (hereinafter referred to as __RTT__), which is the ping result, as an integer value in milliseconds to make it easier to process
