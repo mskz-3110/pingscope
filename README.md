@@ -63,7 +63,7 @@ x.x.x.x の ping 統計:
 
 |Version|Summary|
 |:--|:--|
-|0.1.1|Release pingscope|
+|0.1.2|Release pingscope|
 
 ## Installation
 ### [pingscope](https://pypi.org/project/pingscope/)
