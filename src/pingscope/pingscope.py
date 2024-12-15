@@ -3,7 +3,7 @@ import math
 import json
 import os
 import graspgraph as gg
-from .time import *
+from pyemon.time import *
 
 class PingRank:
   def __init__(self, roundTripTime):
@@ -89,14 +89,11 @@ class Pingscope:
     figure = gg.Statsgraph(
       gg.StatsgraphAxis(gg.Array.arange(1, len(self.RoundTripTimes)), self.MaxCount),
       gg.StatsgraphAxis(self.RoundTripTimes),
-      gg.FigureColors(layoutTitle = rgb, line = rgb, fill = rgba)).to_figure_helper()
+      gg.FigureColors(layoutTitle = rgb, line = rgb, fill = rgba)).to_figure()
     figure.LayoutTitleText = """<b>[pingscope]<br>{}(Avg:{}ms Min:{}ms Max:{}ms)""".format(rank.Name, math.ceil(simpleStats.Avg), math.ceil(simpleStats.Min), math.ceil(simpleStats.Max))
     figure.XTitleText = "Elapsed time(sec)"
     figure.YTitleText = "Round trip time(ms)"
-    return figure.Figure
-
-  def to_figure_helper(self):
-    return gg.FigureHelper(self.to_figure())
+    return figure
 
   @classmethod
   def ping(cls, dst):

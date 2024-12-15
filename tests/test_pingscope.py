@@ -1,13 +1,13 @@
 import pingscope as ps
 import os
 
-def write_image_sample_time(pingCount, maxCount):
+def save_sample_time(pingCount, maxCount):
   roundTripTimes = []
   for i in range(pingCount):
     roundTripTimes.append(i % 30 + 10)
   pingscope = ps.Pingscope(maxCount)
   pingscope.RoundTripTimes = roundTripTimes
-  pingscope.to_figure_helper().write_image("""./images/sample_time_{}sec.png""".format(pingCount))
+  pingscope.to_figure().Save("""./images/sample_time_{}sec.png""".format(pingCount))
 
 def test_pingscope():
   pingscope = ps.Pingscope()
@@ -23,14 +23,14 @@ def test_pingscope():
   }
   for filePath in samples:
     pingscope.RoundTripTimes = samples[filePath]
-    pingscope.to_figure_helper().write_image(filePath)
+    pingscope.to_figure().Save(filePath)
 
-  write_image_sample_time(30, 30)
-  write_image_sample_time(60, 60)
-  write_image_sample_time(3600, 30)
+  save_sample_time(30, 30)
+  save_sample_time(60, 60)
+  save_sample_time(3600, 30)
 
   dst = os.getenv("PINGSCOPE_DST")
   if dst is not None:
     pingFilePath = "./images/usage.ping"
     ps.Pingscope().save(pingFilePath, dst)
-    ps.Pingscope().load(pingFilePath).to_figure_helper().write_image("./images/usage.png")
+    ps.Pingscope().load(pingFilePath).to_figure().Save("./images/usage.png")

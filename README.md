@@ -63,7 +63,7 @@ x.x.x.x の ping 統計:
 
 |Version|Summary|
 |:--|:--|
-|0.1.0|Release pingscope|
+|0.1.1|Release pingscope|
 
 ## Installation
 ### [pingscope](https://pypi.org/project/pingscope/)
@@ -73,5 +73,5 @@ x.x.x.x の ping 統計:
 ```python
 import pingscope as ps
 
-ps.Pingscope().save("./google.ping", "www.google.com").to_figure_helper().write_image("./google.png")
+ps.Pingscope().save("./google.ping", "www.google.com").to_figure().Save("./google.png")
 ```
