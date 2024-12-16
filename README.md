@@ -63,15 +63,15 @@ x.x.x.x の ping 統計:
 
 |Version|Summary|
 |:--|:--|
-|0.1.2|Release pingscope|
+|0.1.3|Release pingscope|
 
 ## Installation
 ### [pingscope](https://pypi.org/project/pingscope/)
 `pip install pingscope`
 
-## Usage
-```python
-import pingscope as ps
+## CLI
+### ping
+Execute ping and create image
 
-ps.Pingscope().save("./google.ping", "www.google.com").to_figure().Save("./google.png")
-```
+#### 1. Image(PNG) conversion by CLI execution
+`pingscope ping google www.google.com 5`

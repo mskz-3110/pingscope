@@ -1,9 +1,9 @@
 import ping3
 import math
 import json
-import os
 import graspgraph as gg
 from pyemon.time import *
+from pyemon.path import *
 
 class PingRank:
   def __init__(self, roundTripTime):
@@ -65,7 +65,7 @@ class Pingscope:
     return self
 
   def save(self, filePath, dst, count = 5):
-    os.makedirs(os.path.dirname(filePath), exist_ok = True)
+    Path(Path.split(filePath)[0]).makedirs()
     with open(filePath, mode = "w", newline = "\n") as file:
       self.run(dst, count, lambda line: file.write(line))
     return self
