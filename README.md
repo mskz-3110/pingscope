@@ -63,7 +63,7 @@ x.x.x.x の ping 統計:
 
 |Version|Summary|
 |:--|:--|
-|0.1.3|Release pingscope|
+|0.1.4|Release pingscope|
 
 ## Installation
 ### [pingscope](https://pypi.org/project/pingscope/)
@@ -74,4 +74,15 @@ x.x.x.x の ping 統計:
 Execute ping and create image
 
 #### 1. Image(PNG) conversion by CLI execution
-`pingscope ping google www.google.com 5`
+
+```
+ping # <ping file name> <dst>
+  [With value]
+    -c|--count     5  # Count
+    -m|--max-count 30 # Max count
+```
+`pingscope ping google www.google.com`
+```
+google.ping is done.
+google.png is done.
+```
