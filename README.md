@@ -15,7 +15,7 @@ Returns the ping result as an integer value in milliseconds and outputs an image
 #{"Avg": 12, "Min": 11, "Max": 12, "ElapsedTime": 5.056681200047024}
 ```
 
-### PDF(PNG)
+### PNG
 ![](./images/usage.png)
 
 ## What is ping

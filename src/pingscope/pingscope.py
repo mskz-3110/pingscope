@@ -65,7 +65,7 @@ class Pingscope:
     return self
 
   def save(self, filePath, dst, count = 5):
-    Path(Path.split(filePath)[0]).makedirs()
+    Path.from_file_path(filePath).makedirs()
     with open(filePath, mode = "w", newline = "\n") as file:
       self.run(dst, count, lambda line: file.write(line))
     return self
