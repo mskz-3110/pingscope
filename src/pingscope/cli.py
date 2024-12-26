@@ -1,7 +1,7 @@
 from pyemon.list import *
 from pyemon.task import *
 from pyemon.status import *
-import pingscope as ps
+from .pingscope import *
 
 class PingTask(Task):
   def __init__(self, *args, **kwargs):
@@ -18,13 +18,13 @@ class PingTask(Task):
     if pingFileName is not None and dst is not None:
       count = int(self.OptionParser.find_option_from_long_name("count").Value)
       maxCount = int(self.OptionParser.find_option_from_long_name("max-count").Value)
-      pingscope = ps.Pingscope(maxCount)
+      pingscope = Pingscope(maxCount)
       pingFilePath = """{}.ping""".format(pingFileName)
       pingscope.save(pingFilePath, dst, count)
-      print(FileStatus(pingFilePath, "done"))
+      print(Status(pingFilePath, "done"))
       pngFilePath = """{}.png""".format(pingFileName)
       pingscope.to_figure().Write(pngFilePath)
-      print(FileStatus(pngFilePath, "done"))
+      print(Status(pngFilePath, "done"))
 Task.set(PingTask("<ping file name> <dst>"))
 
 Task.parse_if_main(__name__, Task.get("help"))
